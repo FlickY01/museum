@@ -67,7 +67,7 @@ function getEvents(req, res) {
   // this sends back a JSON response which is a single string
   res.json([{
     name: faker.name.firstName(),
-    image: faker.image.imageUrl(),
+    donater: faker.name.firstName(),
     date: date,
     price: faker.random.number(),
     number: faker.random.number({min: 0, max: 100}),
