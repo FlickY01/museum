@@ -69,8 +69,8 @@ function getEvents(req, res) {
     name: faker.name.firstName(),
     image: faker.image.imageUrl(),
     date: date,
-    location: "Minsk, Prime Hall" ,
     price: faker.random.number(),
+    number: faker.random.number({min: 0, max: 100}),
   },
   ]);
 }

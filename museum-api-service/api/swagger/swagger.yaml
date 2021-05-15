@@ -120,8 +120,6 @@ definitions:
         type: string
       date:
         type: string       
-      time:
-        type: string
       price:
         type: string
       number:
