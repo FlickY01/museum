@@ -1,16 +1,15 @@
 swagger: "2.0"
 info:
-  version: "0.0.1"
-  title: Hello World App
+  version: "0.1.0"
+  title: Museum
 # during dev, should point to your local machine
 host: localhost:10010
 # basePath prefixes all resource paths 
-basePath: /
+basePath: /api/v1
 # 
 schemes:
   # tip: remove http to make production-grade
   - http
-  - https
 # format of bodies a client can send (Content-Type)
 consumes:
   - application/json
@@ -18,40 +17,138 @@ consumes:
 produces:
   - application/json
 paths:
-  /hello:
+
+  /events:
     # binds a127 app logic to a route
-    x-swagger-router-controller: hello_world
+    x-swagger-router-controller: event-controller
     get:
-      description: Returns 'Hello' to the caller
+      description: Returns list of Museum events
       # used as the method name of the controller
-      operationId: hello
+      operationId: events
       parameters:
-        - name: name
+        - name: date
           in: query
-          description: The name of the person to whom to say hello
+          description: Filtering date
           required: false
           type: string
       responses:
-        "200":
+        "201":
           description: Success
           schema:
             # a pointer to a definition
-            $ref: "#/definitions/HelloWorldResponse"
+            $ref: "#/definitions/EventsResponse"
         # responses may fall through to errors
         default:
           description: Error
           schema:
             $ref: "#/definitions/ErrorResponse"
+  /excursions:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: excursion-controller
+    get:
+      description: Returns list of football matches
+      # used as the method name of the controller
+      operationId: excursions
+      parameters:
+        - name: date
+          in: query
+          description: Filtering date
+          required: false
+          type: string
+      responses:
+        "202":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/ExcursionsResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+            
+  /previews:
+    # binds a127 app logic to a route
+    x-swagger-router-controller: preview-controller
+    get:
+      description: list of excursions
+      # used as the method name of the controller
+      operationId: previews
+      parameters:
+        - name: date
+          in: query
+          description: Filtering date
+          required: false
+          type: string
+      responses:
+        "203":
+          description: Success
+          schema:
+            # a pointer to a definition
+            $ref: "#/definitions/PreviewsResponse"
+        # responses may fall through to errors
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+    
   /swagger:
     x-swagger-pipe: swagger_raw
 # complex objects have schema definitions
 definitions:
-  HelloWorldResponse:
+
+  EventsResponse:
+      type: array
+      items:
+        $ref: "#/definitions/events"
+  GameResponse:
+      type: array
+      items:
+        $ref: "#/definitions/excursions"
+  ShopResponse:
+      type: array
+      items:
+        $ref: "#/definitions/previews"
+  
+  events:
     required:
-      - message
+      - name
     properties:
-      message:
+      name:
         type: string
+      image:
+        type: string
+      date:
+        type: string       
+      time:
+        type: string
+      price:
+        type: string
+      number:
+        type: string
+        
+  excursions:
+    required:
+      - name
+    properties:
+      name:
+        type: string
+      date:
+        type: string
+      location:
+        type: string
+ 
+  previews:
+    required:
+      - name
+    properties:
+      name:
+        type: string
+      date:
+        type: string
+      image: 
+        type: string
+       
   ErrorResponse:
     required:
       - message
