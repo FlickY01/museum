@@ -137,6 +137,8 @@ definitions:
         type: string
       location:
         type: string
+      image: 
+        type: string
  
   previews:
     required:
