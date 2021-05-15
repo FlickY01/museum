@@ -18,7 +18,33 @@ class Gallery extends React.Component {
 
     render() {
         return (
+            <div class="content">
 
+             {this.state.previews.map((event) => (
+                 <div class="element">
+                    <img class="image" src={event.image}></img>
+                        <h1 class="heading">{event.name}</h1>
+                        <p class="text">{event.author}</p>
+                    <div class="description">text</div> 
+                 </div>
+              ))};
+             {this.state.previews.map((event) => (
+                 <div class="element">
+                    <img class="image" src={event.image}></img> 
+                        <h1 class="heading">{event.name}</h1> /
+                        <p class="text">{event.author}</p> 
+                    <div class="description">text</div> 
+                 </div>
+                ))};
+              {this.state.previews.map((event) => (
+                  <div class="element">
+                    <img class="image" src={event.image}></img> 
+                        <h1 class="heading">{event.name}</h1> 
+                        <p class="text">{event.author}</p> 
+                    <div class="description">text</div> 
+                   </div>
+              ))};
+         </div>
         )
     }
 }

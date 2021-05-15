@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import logo from './logo.png';
 import './App.css';
 import React from "react";
 import EventScheduler from "./components/EventScheduler"
@@ -19,20 +19,22 @@ function App() {
       <Router>
         <div className="App">
           <header>
-            <div className="logo">
-              <a><Link to="/"><img src={logo}></img></Link></a>
-            </div>
-            <ul>
-              <li>
-                <Link to="/games"></Link>
-              </li>
-              <li>
-                <Link to="/events"></Link>
-              </li>
-              <li>
-                <Link to="/shop"></Link>
-              </li>
-            </ul>
+            <nav>
+              <div className="logo">
+                <a><Link to="/"><img src={logo}></img></Link></a>
+              </div>
+              <ul>
+                <li>
+                  <Link to="/previews">Картины</Link>
+                </li>
+                <li>
+                  <Link to="/events">События</Link>
+                </li>
+                <li>
+                  <Link to="/excursions">Билеты</Link>
+                </li>
+              </ul>
+            </nav>
           </header>
 
           <section>
@@ -41,13 +43,13 @@ function App() {
                 <About />
               </Route>
               <Route path="/previews">
-                <Games />
+                <EventScheduler />
               </Route>
               <Route path="/events">
-                <Events />
+                <Gallery />
               </Route>
               <Route path="/excursions">
-                <Excursions />
+                <VisitExhibition />
               </Route>
               <Route path="*">
                 <NoMatch />
@@ -70,11 +72,19 @@ function NoMatch() {
   let location = useLocation();
 
   return (
-      <div>
-        <h3>
-          No match for <code>{location.pathname}</code>
-        </h3>
-      </div>
+        <div class="wrapper">
+          <div class="container">
+            <div class="content">
+                <h1 class="heading">Музей ART PROVENANCE</h1>
+                <p class="text">Это самый удобный сайт самого лучшего музея. Здесь самый красивые, красочные и глубокие картины. Недорогие билеты и лучшие экскурсоводы. А также мы любим проводить различные события, аукционы и прочее. Заглядывай к нам! У нас всё самое интересное!</p>
+                <Link to="/excursions">
+                  <div class="btn">
+                    <p class="button">Приобрести билеты</p>
+                  </div>
+                </Link>
+              </div>
+          </div>
+        </div>   
   );
 }
 

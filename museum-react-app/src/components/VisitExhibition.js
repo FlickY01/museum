@@ -18,9 +18,57 @@ class VisitExhibition extends React.Component {
 
     render() {
         return (
-
-        )
-    }
+            <div class="content">
+              <div class="element">
+                <h1 class="heading">Билет Стандарт</h1>
+                {this.state.excursions.map((event) => (
+                        <ul>
+                            <li>{event.price}</li>
+                            <li>{event.date}</li>
+                           
+                            <li>{event.donater}</li>
+                            <li>{event.name}</li>
+                        </ul>
+                ))}
+              </div>
+              <div class="element">
+                <h1 class="heading">Билет с Гидом</h1>
+                {this.state.excursions.map((event) => (
+                        <ul>
+                            <li>{event.price}</li>
+                            <li>{event.date}</li>
+                            
+                            <li>{event.donater}</li>
+                            <li>{event.name}</li>
+                        </ul>
+                ))}
+              </div>
+              <div class="element">
+                <h1 class="heading">Вип Билет</h1>
+                {this.state.excursions.map((event) => (
+                        <ul>
+                            <li>{event.price}</li>
+                            <li>{event.date}</li>
+                            
+                            <li>{event.donater}</li>
+                            <li>{event.name}</li>
+                        </ul>
+                    ))}
+              </div>
+              <div class="element">
+                <h1 class="heading">Семейный билет</h1>
+                {this.state.excursions.map((event) => (
+                        <ul>
+                            <li>{event.price}</li>
+                            <li>{event.date}</li>
+                           
+                            <li>{event.donater}</li>
+                            <li>{event.name}</li>
+                        </ul>
+                    ))}
+              </div>
+            </div>
+        )}
 }
 
 export default VisitExhibition;

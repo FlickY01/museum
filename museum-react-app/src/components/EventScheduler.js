@@ -7,6 +7,7 @@ class EventScheduler extends React.Component {
     constructor(props){
         super(props);
         this.state = { events: [] };
+        this.handleReload();
         this.handleReload = this.handleReload.bind(this);
     }
 
@@ -17,7 +18,28 @@ class EventScheduler extends React.Component {
 
     render(){
         return(
-            
+            <div class="content">
+              <div class="element">
+                {this.state.events.map((event) => (
+                    <p><span>Аукцион</span> <span>{event.date}</span> <span>{event.donater}</span> <span>{event.number}</span> <span>{event.price}</span></p>
+                ))}
+              </div>
+              <div class="element">
+                {this.state.events.map((event) => (
+                    <p><span>Выступление</span> <span>{event.date}</span> <span>{event.donater}</span> <span>{event.number}</span> <span>{event.price}</span></p>
+                ))}
+              </div>
+              <div class="element">
+                {this.state.events.map((event) => (
+                    <p><span>Выставка</span> <span>{event.date}</span> <span>{event.donater}</span> <span>{event.number}</span> <span>{event.price}</span></p>
+                ))}
+              </div>
+              <div class="element">
+                {this.state.events.map((event) => (
+                    <p><span>Банкет</span> <span>{event.date}</span> <span>{event.donater}</span> <span>{event.number}</span> <span>{event.price}</span></p>
+                ))}
+              </div>
+            </div>
         )
     }
 }
