@@ -46,7 +46,7 @@ paths:
     # binds a127 app logic to a route
     x-swagger-router-controller: excursion-controller
     get:
-      description: Returns list of football matches
+      description: Returns list of Museum excursions
       # used as the method name of the controller
       operationId: excursions
       parameters:
@@ -101,11 +101,11 @@ definitions:
       type: array
       items:
         $ref: "#/definitions/events"
-  GameResponse:
+  ExcursionsResponse:
       type: array
       items:
         $ref: "#/definitions/excursions"
-  ShopResponse:
+  PreviewsResponse:
       type: array
       items:
         $ref: "#/definitions/previews"
@@ -116,7 +116,7 @@ definitions:
     properties:
       name:
         type: string
-      image:
+      donater:
         type: string
       date:
         type: string       
@@ -135,7 +135,9 @@ definitions:
         type: string
       location:
         type: string
-      image: 
+      price: 
+        type: string
+      donater:
         type: string
  
   previews:
@@ -147,6 +149,8 @@ definitions:
       date:
         type: string
       image: 
+        type: string
+      author: 
         type: string
        
   ErrorResponse:
