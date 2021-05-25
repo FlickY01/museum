@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<football>
+    <events>
+        <case name="Disco" date="27-05-2021" price="12" location="Falcon CLub"/>
+    </events>
+    <events>
+        <case name="Concert" date="29-05-2021" price="35" location="Minsk Arena"/>
+    </events>
+    <events>
+        <case name="FootMuseum" date="23-05-2021" price="18" location="ul. Kirova 9"/>
+    </events>
+    <events>
+        <free name="Conferences" date="22-05-2021" price="free" location="ul. Kirova 12"/>
+    </events>
+    <events>
+        <case name="Auction" date="22-05-2021" price="55" location="ul. Kirova 15"/>
+    </events>
+
+    <shop>
+        <item name="Disco-ticket" date="22-05-2021" price="12"/>
+    </shop>
+    <shop>
+        <item name="Concert-ticket" date="09-05-2021" price="35"/>
+    </shop>
+    <shop>
+        <item name="Auction-ticket" date="15-05-2021" price="55"/>
+    </shop>
+    <shop>
+        <item name="Football-ticket" date="19-05-2021" price="20"/>
+    </shop>
+    <shop>
+        <item name="3rd place-ticket" date="27-05-2021" price="30"/>
+    </shop>
+    <shop>
+        <champions name="1st place-ticket" date="27-05-2021" price="50"/>
+    </shop>
+    
+    <schedule>
+        <match team1="Dinamo Minsk" team2="BATE" score=" 1:1 (pen 4:5) " date="24-05-2021"/>
+    </schedule>
+    <schedule>
+        <match team1="Minsk" team2="Shakhter" score=" 2:4 " date="25-05-2021"/>
+    </schedule>
+    <schedule>
+        <match team1="Minsk" team2="Dinamo Minsk" score=" -:- " date="30-05-2021"/>
+    </schedule>
+    <schedule>
+    <match team1="BATE" team2="Shakhter" score=" -:- " date="31-05-2021"/>
+    </schedule>
+</football>

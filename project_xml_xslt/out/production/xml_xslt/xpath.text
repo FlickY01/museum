@@ -1,0 +1,13 @@
+//@mark[.=10]/ancestor::student/@university
+//student[@name='Artyom Krasovski']/preceding-sibling::*[1]
+//student[not(paper)]
+
+count(//student[@university='BSU'])
+sum(//@mark)
+
+//events[1]/case[@*]
+//case[@price='free']
+
+//events[1]//case[@*]
+//events[case/@price &gt;=5]
+schedule[1]//match[@*]
